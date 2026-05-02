@@ -1,83 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do App</title>
     <style>
-        .li {
-            display: flex;
-            margin-bottom: 12px;
-        }
+      .li {
+        display: flex;
+        margin-bottom: 12px;
+      }
 
-        button {
-            margin-left: 10px;
-        }
+      button {
+        margin-left: 10px;
+      }
 
-        .x {
-            color: rgb(124, 124, 124);
-        }
+      .x {
+        color: rgb(124, 124, 124);
+      }
 
-        .x button {
-            border: none;
-            margin-left: 10px;
-        }
+      .x button {
+        border: none;
+        margin-left: 10px;
+      }
 
-        .x .done {
-            background-color: green;
-        }
+      .x .done {
+        background-color: green;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <input type="text" name="" id="text">
-    <input type="button" value="SUBMIT" onclick="submit()" id="submit">
+  <body>
+    <input type="text" name="" id="text" />
+    <input type="button" value="SUBMIT" onclick="submit()" id="submit" />
 
     <div class="list">
-        <ul id="list">
-
-        </ul>
+      <ul id="list"></ul>
     </div>
 
     <script>
-        let sub = document.getElementById("submit");
-        let list = document.getElementById("list");
-        let text = document.getElementById("text");
+      let sub = document.getElementById("submit");
+      let list = document.getElementById("list");
+      let text = document.getElementById("text");
 
-        function submit() {
-            let txt = document.getElementById("text").value;
-            let li = document.createElement("li");
-            li.className = "li";
+      function submit() {
+        let txt = document.getElementById("text").value;
+        let li = document.createElement("li");
+        li.className = "li";
 
-            li.innerHTML = `
+        li.innerHTML = `
   <span class="text">${txt}</span>
   <button class="done" onclick="done(this)">Done</button>
   <button class="del" onclick="del(this)">Delete</button>
 `;
-            list.prepend(li);
-            text.value = "";
+        list.prepend(li);
+        text.value = "";
+      }
+      text.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault(); // verhindert z.B. Formular-Submit
+          submit();
         }
-        text.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); // verhindert z.B. Formular-Submit
-                submit();
-            }
-        });
-        function done(element) {
-            let itm = element.parentElement;
-            itm.classList.toggle("x");
-            if (itm.classList.contains("x")) {
-                list.appendChild(itm);
-            } else {
-                list.prepend(itm);
-            }
+      });
+      function done(element) {
+        let itm = element.parentElement;
+        itm.classList.toggle("x");
+        if (itm.classList.contains("x")) {
+          list.appendChild(itm);
+        } else {
+          list.prepend(itm);
         }
-        function del(element) {
-            let y = element.parentElement;
-            y.remove();
-        }
+      }
+      function del(element) {
+        let y = element.parentElement;
+        y.remove();
+      }
     </script>
-</body>
-
+  </body>
 </html>
