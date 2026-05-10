@@ -1,0 +1,263 @@
+body {
+  background-color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #22293b;
+}
+
+button {
+  cursor: pointer;
+}
+
+.logo {
+  color: #38bdf8;
+  font-size: 40px;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: large;
+  transition: all 0.3s ease-in-out;
+  border: 3px solid #38bdf8;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: large;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+.header-btn:hover {
+  transform: scale(1.1);
+  font-size: 110%;
+}
+
+.hero {
+  display: grid;
+  grid-template:
+    "hero-h hero-code" auto
+    "hero-txt hero-code" auto
+    "hero-btns hero-code" auto / 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem;
+  align-items: center;
+}
+
+.hero-h {
+  grid-area: hero-h;
+  color: #38bdf8;
+  font-size: 50px;
+  font-weight: bold;
+}
+.hero-txt {
+  grid-area: hero-txt;
+  color: #cbd5e1;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.hero-btns {
+  grid-area: hero-btns;
+  display: flex;
+  gap: 20px;
+}
+.hero-btns .btn-primary:hover {
+  background-color: transparent;
+  color: #38bdf8;
+  transform: scale(1.1);
+  border: 3px solid #38bdf8;
+}
+.hero-btns .btn-secondary:hover {
+  transform: scale(1.1);
+}
+.hero-code {
+  grid-area: hero-code;
+  background-color: #1e293b;
+  border-radius: 10px;
+  height: 300px;
+}
+
+.hero-code {
+  border: 2px solid #1e293b;
+  color: #cbd5e1;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+#code-mac {
+  width: 100%;
+  height: 18%;
+  background-color: #0f172a;
+  border-radius: 10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  align-items: center;
+}
+.mac-close,
+.mac-minimize,
+.mac-maximize {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+}
+
+.mac-close {
+  margin-left: 12px;
+  background-color: #ef4444;
+}
+.mac-minimize {
+  background-color: #fbbf24;
+}
+.mac-maximize {
+  background-color: #34d399;
+}
+
+.code-bsp {
+  color: #cbd5e1;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.code-line {
+  display: block;
+  margin-left: 8px;
+}
+.code-keyword {
+  color: violet;
+  font-weight: bold;
+}
+.code-function {
+  color: #38bdf8;
+}
+.code-params {
+  color: orange;
+}
+.code-string {
+  color: lightgreen;
+}
+.code-indent {
+  display: inline-block;
+  width: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template:
+      "hero-h" auto
+      "hero-txt" auto
+      "hero-code" auto
+      "hero-btns" auto / 1fr;
+  }
+}
+
+.About {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 4rem;
+  justify-content: center;
+}
+.card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  color: #cbd5e1;
+  height: 40vh;
+}
+
+.card h2 {
+  color: #38bdf8;
+  margin-top: 0;
+}
+
+.scroller {
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.lang-cards {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  align-items: center;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.lang-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.language-card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 130px;
+  width: 130px;
+  height: 100px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.language-card:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.language-card:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
